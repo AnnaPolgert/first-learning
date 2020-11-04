@@ -1,26 +1,26 @@
-// ------------------------PIERWSZA OPCJA------------------------------------
+
 
 //Get the button:
-scrollButton = document.getElementById("scroll-top-button");
+const scrollButton = document.querySelector(".scroll-top-button");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
+const showHideButton = function() {
   if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-    scrollButton.style.display = "block";
+    // scrollButton.style.display = "block";
+    scrollButton.classList.add('scroll-top-button--active');
   } else {
-    scrollButton.style.display = "none";
+    // scrollButton.style.display = "none";
+    scrollButton.classList.remove('scroll-top-button--active');
   }
 }
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+// TO DO check if works cross-browser
+const scrollTop = function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" 
+  });
 }
 
-
-//----------------------- DRUGA OPCJA --------------------------------
-
-// const scrollToTopBtn = document.getElementById("scroll-top-button")
+scrollButton.addEventListener("click", scrollTop);
+window.addEventListener("scroll", showHideButton);

@@ -2,6 +2,7 @@ body {
    background-color: #222;
    font-family: 'Grandstander', cursive;
    color: #999;
+   min-height: 5000px;
 }
 
 .web-title {
@@ -44,7 +45,7 @@ body {
    word-wrap: break-word;
 }
 
-#scroll-top-button {
+.scroll-top-button {
    width: 50px;
    height: 50px;
    background-color: rgb(200, 200, 200);
@@ -58,13 +59,18 @@ body {
    border: 1px solid #111;
    cursor: pointer;
    transition: transform .2s ease-in-out;
-   display: none;
+   transition: opacity .5s ease-in-out;
+   opacity: 0;
 }
 
-#scroll-top-button:hover {
+.scroll-top-button--active{
+   opacity: 1;
+}
+
+.scroll-top-button:hover {
    transform: scale(1.05);
 }
 
-#scroll-top-button:focus {
+.scroll-top-button:focus {
    outline: none;
 }

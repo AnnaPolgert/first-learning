@@ -1,2 +1,1 @@
-# firstlearning
-## lorem ipsum
+# first learning

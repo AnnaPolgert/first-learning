@@ -1,4 +1,4 @@
-
+// --------------------- Variables -------------------------
 
 //Get the button:
 const scrollButton = document.querySelector(".scroll-top-button");
@@ -21,6 +21,8 @@ const scrollTop = function() {
     behavior: "smooth" 
   });
 }
+
+// --------------------- Events -------------------------
 
 scrollButton.addEventListener("click", scrollTop);
 window.addEventListener("scroll", showHideButton);

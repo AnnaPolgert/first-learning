@@ -17,17 +17,22 @@
    font-weight: 900;
  }
 
+/* Variables */
+:root {
+   --light-background: #999;
+   --light-font: #999;
+   --light-border: 2px solid #999;
+   /* TO DO: 2box shadow, font colors, dark background */
+}
+
+
+
 /* main */
 body {
    background-color: #222;
    font-family: 'Grandstander';
-   color: #999;
+   color: var(--light-font);
    min-height: 5000px;
-}
-
-body.light-mode{
-   background-color: #999;
-   color: #222;
 }
 
 .web-title {
@@ -39,7 +44,7 @@ body.light-mode{
 }
 
 .descriptions {
-   border: 2px solid #999;
+   border: var(--light-border);
    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
    box-shadow: 5px 5px 15px 5px #000000;
    width: 60%;
@@ -61,7 +66,7 @@ body.light-mode{
 
 .entry {
    width: 28%;
-   border: 2px solid #999;
+   border: var(--light-border);
    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
    box-shadow: 5px 5px 15px 5px #000000;
    padding: 15px;
@@ -105,9 +110,9 @@ body.light-mode{
    font-size: 25px; margin-bottom: 2px;
 }
 
-.mode-switch-button {
+.mode-switcher {
    font-family: 'Grandstander';
-   width: 70px;
+   width: 90px;
    height:30px;
    border-radius: 50px;
    border: 3px solid rgb(20, 20, 20);
@@ -118,6 +123,41 @@ body.light-mode{
    background-color: #d8d8d8;
 }
 
-.mode-switch-button:focus {
+.mode-switcher-bullet {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width: 24px;
+   height: 24px;
+   border-radius: 100%;
+   background-color: red;
+   transition: left .3s ease-in-out;
+}
+
+.mode-switcher:focus {
    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* light mode */
+
+body.light-mode {
+   background-color: var(--light-background);
+   color: #222;
+}
+
+body.light-mode .entry {
+   background-color: var(--light-background);
+}
+
+body.light-mode .mode-switcher-bullet {
+   left: 60px;
 }

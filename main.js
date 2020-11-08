@@ -26,3 +26,24 @@ const scrollTop = function() {
 
 scrollButton.addEventListener("click", scrollTop);
 window.addEventListener("scroll", showHideButton);
+
+
+
+
+
+// --------------------- Variables -------------------------
+
+const modeButton = document.querySelector(".mode-switch-button");
+
+const switchMode = function() {
+  const body = document.querySelector("body");
+  if (body.classList.contains("light-mode")) {
+    body.classList.remove("light-mode");
+  } else {
+    body.classList.add("light-mode");
+  }
+}
+
+// --------------------- Events -------------------------
+
+modeButton.addEventListener("click", switchMode);

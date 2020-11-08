@@ -5,6 +5,11 @@ body {
    min-height: 5000px;
 }
 
+body.light-mode{
+   background-color: #999;
+   color: #222;
+}
+
 .web-title {
    font-size: 50px;
    font-weight: 900;
@@ -76,6 +81,22 @@ body {
    outline: none;
 }
 
-.icon-up-open:before{
+.icon-up-open:before {
    font-size: 25px; margin-bottom: 2px;
+}
+
+.mode-switch-button {
+   width: 70px;
+   height:30px;
+   border-radius: 50px;
+   border: 3px solid rgb(20, 20, 20);
+   position: absolute;
+   top: 70px;
+   left: 70px;
+   cursor: pointer;
+   background-color: #d8d8d8;
+}
+
+.mode-switch-button:focus {
+   outline: none;
 }

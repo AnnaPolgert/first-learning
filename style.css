@@ -22,9 +22,20 @@
    --light-background: #999;
    --light-font: #999;
    --light-border: 2px solid #999;
-   /* TO DO: 2box shadow, font colors, dark background */
+   --dark-background: #222;
+   --dark-font: #222;
+   --box-shadow: 2px 2px 12px 1px #000000;
+   /* TO DO: 2box shadow */
 }
 
+/* Links */
+a:link {
+   color: inherit;
+}
+
+a:visited {
+   color: inherit;
+}
 
 
 /* main */
@@ -45,8 +56,8 @@ body {
 
 .descriptions {
    border: var(--light-border);
-   -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-   box-shadow: 5px 5px 15px 5px #000000;
+   -webkit-box-shadow: var(--box-shadow); 
+   box-shadow: var(--box-shadow);
    width: 60%;
    margin-left: auto;
    margin-right: auto;
@@ -67,8 +78,8 @@ body {
 .entry {
    width: 28%;
    border: var(--light-border);
-   -webkit-box-shadow: 5px 5px 15px 5px #000000; 
-   box-shadow: 5px 5px 15px 5px #000000;
+   -webkit-box-shadow: var(--box-shadow); 
+   box-shadow: var(--box-shadow);
    padding: 15px;
    background-color: rgb(31, 30, 30);
    line-height: 20px;
@@ -80,8 +91,8 @@ body {
    height: 50px;
    background-color: rgb(200, 200, 200);
    border-radius: 100px;
-   -webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75); 
-   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
+   -webkit-box-shadow: var(--box-shadow); 
+   box-shadow: var(--box-shadow);
    position: fixed;
    bottom: 50px;
    right: 80px;
@@ -115,23 +126,24 @@ body {
    width: 90px;
    height:30px;
    border-radius: 50px;
-   border: 3px solid rgb(20, 20, 20);
+   border: none;
    position: absolute;
    top: 25px;
    left: 25px;
    cursor: pointer;
    background-color: #d8d8d8;
+   box-shadow: var(--box-shadow);
 }
 
 .mode-switcher-bullet {
    position: absolute;
-   top: 0px;
-   left: 0px;
-   width: 24px;
-   height: 24px;
+   top: 3px;
+   left: 3px;
+   width: 23px;
+   height: 23px;
    border-radius: 100%;
-   background-color: red;
-   transition: left .3s ease-in-out;
+   background-color: var(--dark-background);
+   transition: left .5s ease;
 }
 
 .mode-switcher:focus {
@@ -139,25 +151,23 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
 /* light mode */
 
 body.light-mode {
    background-color: var(--light-background);
-   color: #222;
+   color: var(--dark-font);
 }
 
 body.light-mode .entry {
    background-color: var(--light-background);
 }
 
+body.light-mode .mode-switcher {
+   background-color: var(--dark-background);
+   color: var(--light-font)
+}
+
 body.light-mode .mode-switcher-bullet {
-   left: 60px;
+   left: 64px;
+   background-color: var(--light-background);
 }

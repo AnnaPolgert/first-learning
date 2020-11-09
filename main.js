@@ -14,7 +14,7 @@ const showHideButton = function() {
 }
 
 // When the user clicks on the button, scroll to the top of the document
-// TO DO check if works cross-browser
+// TO DO: check if works cross-browser
 const scrollTop = function() {
   window.scrollTo({
     top: 0,
@@ -34,15 +34,16 @@ window.addEventListener("scroll", showHideButton);
 // --------------------- Variables -------------------------
 
 const modeButton = document.querySelector(".mode-switcher");
+const modeText = document.querySelector(".mode-switcher-text")
 
 const switchMode = function() {
   const body = document.querySelector("body");
   if (body.classList.contains("light-mode")) {
     body.classList.remove("light-mode");
-    // TO DO: change text to dark
+    modeText.innerText = "light";
   } else {
     body.classList.add("light-mode");
-    // TO DO: change text to light
+    modeText.innerText = "dark";
   }
 }
 

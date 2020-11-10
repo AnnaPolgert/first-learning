@@ -1,4 +1,6 @@
-// --------------------- Variables -------------------------
+// --------------------scrollTop--------------------------------
+
+//Variables
 
 //Get the button:
 const scrollButton = document.querySelector(".scroll-top-button");
@@ -22,16 +24,16 @@ const scrollTop = function() {
   });
 }
 
-// --------------------- Events -------------------------
+//Events
 
 scrollButton.addEventListener("click", scrollTop);
 window.addEventListener("scroll", showHideButton);
 
 
 
+// --------------------switchMode--------------------------------
 
-
-// --------------------- Variables -------------------------
+//Variables
 
 const modeButton = document.querySelector(".mode-switcher");
 const modeText = document.querySelector(".mode-switcher-text")
@@ -47,6 +49,23 @@ const switchMode = function() {
   }
 }
 
-// --------------------- Events -------------------------
+//Events
 
 modeButton.addEventListener("click", switchMode);
+
+
+// --------------------Accordion--------------------------------
+
+//Variables
+
+const accordionHeader = document.querySelectorAll(".entry-item-header");
+
+accordionHeader.forEach(accordionHeader => {
+  accordionHeader.addEventListener("click", event => {
+    accordionHeader.classList.toggle("active");
+  });
+});
+
+
+//Events
+

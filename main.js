@@ -56,16 +56,26 @@ modeButton.addEventListener("click", switchMode);
 
 // --------------------Accordion--------------------------------
 
-//Variables
-
 const accordionHeader = document.querySelectorAll(".entry-item-header");
 
 accordionHeader.forEach(accordionHeader => {
   accordionHeader.addEventListener("click", event => {
+    // only one open
+    const currentlyActiveAccordionHeader = document.querySelector(".entry-item-header.active");
+    if(currentlyActiveAccordionHeader && currentlyActiveAccordionHeader!==accordionHeader) {
+      currentlyActiveAccordionHeader.classList.remove("active");
+      currentlyActiveAccordionHeader.nextElementSibling.style.maxHeight = 0;
+    }
+
     accordionHeader.classList.toggle("active");
+    const accordionBody = accordionHeader.nextElementSibling;
+    if(accordionHeader.classList.contains("active")) {
+      accordionBody.style.maxHeight = accordionBody.scrollHeight + "px";
+    }
+    else {
+      accordionBody.style.maxHeight = 0;
+    }
   });
 });
 
-
-//Events
 

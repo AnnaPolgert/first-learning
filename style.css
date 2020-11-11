@@ -25,7 +25,7 @@
    --dark-background: #222;
    --dark-font: #222;
    --box-shadow: 2px 2px 12px 1px #000000;
-   /* TO DO: 2box shadow */
+   --selection: #e78484;
 }
 
 /* Links */
@@ -37,13 +37,24 @@ a:visited {
    color: inherit;
 }
 
+a:hover {
+   color: #df1313;
+}
 
 /* main */
 body {
-   background-color: #222;
+   background-color: var(--dark-background);
    font-family: 'Grandstander';
    color: var(--light-font);
    min-height: 5000px;
+}
+
+::-moz-selection {
+   background: var(--selection);
+}
+
+::selection {
+   background: var(--selection);
 }
 
 .web-title {
@@ -115,6 +126,7 @@ body {
    line-height: 20px;
    border-top: var(--light-border);
    word-wrap: break-word;
+   margin: 0;
 }
 
 .scroll-top-button {
@@ -180,7 +192,6 @@ body {
 .mode-switcher:focus {
    outline: none;
 }
-
 
 /* light mode */
 

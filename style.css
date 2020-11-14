@@ -160,8 +160,9 @@ body {
    outline: none;
 }
 
-.icon-up-open:before {
-   font-size: 25px; margin-bottom: 2px;
+.icon-up-open::before {
+   font-size: 25px;
+   padding-left: 1px;
 }
 
 .mode-switcher {
@@ -217,11 +218,32 @@ body.light-mode .mode-switcher-bullet {
 /* mobile */
 
 @media (max-width: 767px) {
+   .web-title {
+      font-size: 40px;
+      margin-bottom: 30px;
+   }
+   
    .descriptions {
       width: 100%;
    }
 
    .entry-item {
       width: 100%;
+   }
+
+   .scroll-top-button {
+      width: 40px;
+      height: 40px;
+      bottom: 20px;
+      right: 20px;
+   }
+
+   .icon-up-open:before {
+      font-size: 20px;
+      padding: 0;
+   }
+
+   .mode-switcher {
+      display: none;
    }
 }
